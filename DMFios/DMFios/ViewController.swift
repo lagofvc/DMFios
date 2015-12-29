@@ -19,7 +19,7 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate {
         
         if(FBSDKAccessToken.currentAccessToken() == nil)
         {
-            print("User Not Logged IN")
+            print("User Not Logged in")
         } else
         {
             let setupProfPage = self.storyboard?.instantiateViewControllerWithIdentifier("SetupProfilePageViewController") as! SetupProfilePageViewController
@@ -49,10 +49,10 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate {
             return
         }
         
-        if let userToken = result.token
+        if let _ = result.token
         {
             //Get the user access token
-            let token:FBSDKAccessToken = result.token
+            let _:FBSDKAccessToken = result.token
             
             print("Token = \(FBSDKAccessToken.currentAccessToken().tokenString)")
             print("UserID = \(FBSDKAccessToken.currentAccessToken().userID)")
